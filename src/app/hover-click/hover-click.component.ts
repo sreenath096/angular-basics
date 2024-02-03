@@ -5,20 +5,29 @@ import { Component, HostBinding, HostListener } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './hover-click.component.html',
-  styleUrl: './hover-click.component.css'
+  styleUrl: './hover-click.component.css',
+  host: {
+    role: 'presentation',
+    '[id]': 'otherId',
+    '[class.hovered]': 'isHovered',
+    '(mouseenter)': 'onMouseEnter()',
+    '(mouseleave)': 'onMouseLeave()',
+    '(click)': 'onClick()',
+  },
 })
 export class HoverClickComponent {
-  @HostBinding('class.hovered') isHovered = true;
+  isHovered = false;
+  otherId = 'hi leela';
 
-  @HostListener('click') onClick() {
+  onClick() {
     console.log('element clicked');
   }
 
-  @HostListener('mouseenter') onMouseEnter() {
+  onMouseEnter() {
     this.isHovered = true;
   }
 
-  @HostListener('mouseleave') onMouseLeave() {
+  onMouseLeave() {
     this.isHovered = false;
   }
 }
