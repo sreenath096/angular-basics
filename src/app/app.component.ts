@@ -3,15 +3,23 @@ import { RouterOutlet } from '@angular/router';
 import ProfileComponent from './profile.component';
 import CounterComponent from './Counter/Counter.component';
 import { GetterInputComponent } from './getter-input/getter-input.component';
+import { PanelComponent } from './panel/panel.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ProfileComponent, CounterComponent, GetterInputComponent],
+  imports: [CommonModule, RouterOutlet, ProfileComponent, CounterComponent,
+    GetterInputComponent, PanelComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'angular-basics';
   counter: number = 20;
+  receivedDataFromChild = '';
+
+  dataReceived(data: string) {
+    this.receivedDataFromChild = data;
+  }
 }
