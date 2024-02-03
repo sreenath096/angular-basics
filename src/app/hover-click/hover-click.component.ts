@@ -13,4 +13,12 @@ export class HoverClickComponent {
   @HostListener('click') onClick() {
     console.log('element clicked');
   }
+
+  @HostListener('mouseenter') onMouseEnter() {
+    this.isHovered = true;
+  }
+
+  @HostListener('mouseleave') onMouseLeave() {
+    this.isHovered = false;
+  }
 }
