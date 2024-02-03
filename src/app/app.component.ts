@@ -14,7 +14,7 @@ import { LifeCycleHooksComponent } from './life-cycle-hooks/life-cycle-hooks.com
   standalone: true,
   imports: [CommonModule, RouterOutlet, ProfileComponent, CounterComponent,
     GetterInputComponent, PanelComponent, CardComponent, HoverClickComponent,
-  LifeCycleHooksComponent],
+    LifeCycleHooksComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -22,8 +22,16 @@ export class AppComponent {
   title = 'angular-basics';
   counter: number = 20;
   receivedDataFromChild = '';
+  isActive = true;
 
   dataReceived(data: string) {
     this.receivedDataFromChild = data;
+  }
+
+  changeTitle() {
+    this.title = 'random string ' + Math.random();
+  }
+  toggleHook() {
+    this.isActive = !this.isActive;
   }
 }
