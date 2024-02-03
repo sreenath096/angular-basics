@@ -4,6 +4,10 @@
 <app-profile></app-profile>
 
 <div>
-  <app-counter [count]="counter" message="welcome message" [showcounter]="'false'">
+  <app-counter [dummynamecounter]="counter" message="welcome message" [showcounter]="'false'" [counterTitle]="title">
   </app-counter>
+</div>
+
+<div>
+  <app-getter-input [title]="title"></app-getter-input>
 </div>
