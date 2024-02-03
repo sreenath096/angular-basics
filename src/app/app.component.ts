@@ -5,12 +5,13 @@ import CounterComponent from './Counter/Counter.component';
 import { GetterInputComponent } from './getter-input/getter-input.component';
 import { PanelComponent } from './panel/panel.component';
 import { CommonModule } from '@angular/common';
+import { CardComponent } from './card/card.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [CommonModule, RouterOutlet, ProfileComponent, CounterComponent,
-    GetterInputComponent, PanelComponent],
+    GetterInputComponent, PanelComponent, CardComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
